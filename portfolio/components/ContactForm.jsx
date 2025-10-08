@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 
+
 export default function ContactForm() {
   const [status, setStatus] = useState("");
+  const formspreeUrl = process.env.NEXT_PUBLIC_FORMSPREE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus("Sending...");
     const form = e.target;
     const data = new FormData(form);
-    const response = await fetch("https://formspree.io/f/myzndvya", {
+    const response = await fetch(formspreeUrl, {
       method: "POST",
       body: data,
       headers: {
