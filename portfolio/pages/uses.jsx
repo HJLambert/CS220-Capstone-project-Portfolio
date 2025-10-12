@@ -1,4 +1,6 @@
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import ContactForm from '../components/ContactForm';
 import Head from 'next/head';
 
 export default function Uses() {
@@ -47,9 +49,9 @@ export default function Uses() {
       <div className="min-h-screen bg-white dark:bg-black border-x border-zinc-100 dark:border-zinc-800 text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
         <Navbar options={navOptions} position="top" />
         <main className="max-w-5xl mx-auto px-8 py-20 flex-1">
-        <div className="hidden md:block">
-          <Navbar options={navOptions} position="bottom" />
-        </div>
+        <Footer navOptions={navOptions}>
+          <ContactForm />
+        </Footer>
           <h1 className="text-3xl font-bold mb-8">Here's A short list of tools I employ and enjoy:</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left: Categories and subheaders */}

@@ -1,5 +1,7 @@
 import Navbar from '../components/Navbar';
 import ThemeToggle from '../components/ThemeToggle';
+import Footer from '../components/Footer';
+import ContactForm from '../components/ContactForm';
 import Head from 'next/head';
 
 export default function About() {
@@ -33,9 +35,9 @@ export default function About() {
             <ThemeToggle />
           </div>
         </main>
-        <div className="hidden md:block">
-          <Navbar options={navOptions} position="bottom" />
-        </div>
+        <Footer navOptions={navOptions}>
+          <ContactForm />
+        </Footer>
       </div>
     </>
   );
