@@ -9,7 +9,7 @@ export default function Footer({ navOptions, children }) {
           <h3 className="text-lg font-semibold mb-2">Connect</h3>
           <ul className="mb-2 space-y-1">
             <li><a href="https://github.com/HJLambert" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-sky-500">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/hunterlambert" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-sky-500">LinkedIn</a></li>
+            <li><a href="https://www.linkedin.com/in/hunter-lambert-b21330196/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-sky-500">LinkedIn</a></li>
             {/* Add more social links as needed */}
           </ul>
           <div className="text-sm text-gray-700 dark:text-gray-300">
