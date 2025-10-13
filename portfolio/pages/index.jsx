@@ -9,6 +9,7 @@ export default function Home() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/uses', label: 'Uses' },
+    { path: '/projects', label: 'Projects' },
   ];
 
   return (

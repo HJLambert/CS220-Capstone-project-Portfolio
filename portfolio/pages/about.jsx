@@ -9,6 +9,7 @@ export default function About() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/uses', label: 'Uses' },
+    { path: '/projects', label: 'Projects' },
   ];
 
   return (

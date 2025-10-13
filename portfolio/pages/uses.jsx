@@ -8,6 +8,7 @@ export default function Uses() {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/uses', label: 'Uses' },
+    { path: '/projects', label: 'Projects' },
   ];
 
   const categories = [
