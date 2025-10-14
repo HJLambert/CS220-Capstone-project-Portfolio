@@ -8,8 +8,8 @@ export default function Footer({ navOptions, children }) {
         <div className="mb-8 md:mb-0">
           <h3 className="text-lg font-semibold mb-2 text-blue-700 dark:text-yellow-700">Connect</h3>
           <ul className="mb-2 space-y-1">
-            <li><a href="https://github.com/HJLambert" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-blue-500 dark:hover:text-yellow-400">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/hunter-lambert-b21330196/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-blue-500 dark:hover:text-yellow-400">LinkedIn</a></li>
+            <li><a href="https://github.com/HJLambert" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 dark:text-yellow-700 hover:text-blue-500 dark:hover:text-yellow-400">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/hunter-lambert-b21330196/" target="_blank" rel="noopener noreferrer" className="hover:underline text-blue-700 dark:text-yellow-700 hover:text-blue-500 dark:hover:text-yellow-400">LinkedIn</a></li>
             {/* Add more social links as needed */}
           </ul>
           <div className="text-sm text-blue-600 dark:text-yellow-300">

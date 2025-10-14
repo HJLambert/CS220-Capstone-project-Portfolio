@@ -3,5 +3,6 @@
 @tailwind utilities;
 
 body {
+  font-family: 'Work Sans', sans-serif;
   @apply transition-colors duration-300 ease-in-out;
 }

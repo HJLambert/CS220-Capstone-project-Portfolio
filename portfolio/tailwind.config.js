@@ -6,7 +6,16 @@ module.exports = {
     "./components/**/*.{js,jsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          'Work Sans',
+          'ui-sans-serif',
+          'system-ui',
+          'sans-serif',
+        ],
+      },
+    },
   },
   plugins: [],
 }
