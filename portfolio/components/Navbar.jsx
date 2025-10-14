@@ -8,7 +8,11 @@ export default function Navbar({ options, position = 'top' }) {
   return (
     <>
       <GradientLine />
-      <nav className="navbar bg-white dark:bg-black w-full flex justify-center relative z-20">
+      <nav className="navbar bg-white dark:bg-black w-full flex items-center justify-between relative z-20 px-4 md:px-8">
+        {/* Left: Site Title */}
+        <div className="flex-shrink-0 text-lg md:text-xl font-bold text-blue-700 dark:text-yellow-700 font-sans py-4">
+          Hunter Lambert | Web Developer
+        </div>
         {/* Desktop: horizontal menu */}
         <ul className="hidden md:flex gap-8 py-4 text-blue-700 dark:text-yellow-700">
           {options.map((opt, i) => (
