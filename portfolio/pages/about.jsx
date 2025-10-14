@@ -4,6 +4,7 @@ import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import Head from 'next/head';
+import { useEffect, useRef } from 'react';
 
 const asciiArt = `
                                                                                                                         
@@ -94,6 +95,13 @@ const asciiArt = `
 `;
 
 export default function About() {
+  // For fade-in and waving animation
+  const asciiRef = useRef(null);
+  useEffect(() => {
+    if (asciiRef.current) {
+      asciiRef.current.classList.add('animate-waving-fade-in');
+    }
+  }, []);
   const navOptions = [
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
@@ -107,37 +115,76 @@ export default function About() {
         <title>About | Hunter Lambert</title>
       </Head>
 
-  <div className="min-h-screen bg-white dark:bg-black border-l border-zinc-100 dark:border-zinc-800 text-gray-900 dark:text-gray-100 flex flex-col justify-between">
-        <Navbar options={navOptions} position="top" />
+      {/* Animated gradient border container */}
+      <div className="min-h-screen bg-white dark:bg-black flex flex-col justify-between border-l-4 border-r-4 border-transparent relative overflow-hidden">
+        {/* Animated border overlays */}
+        <div className="pointer-events-none absolute inset-0 z-0">
+          <div className="absolute left-0 top-0 h-full w-2 animate-gradient-wave bg-gradient-to-b from-cyan-400 via-green-400 to-blue-400 dark:from-yellow-700 dark:via-amber-500 dark:to-yellow-300 opacity-80 rounded-l-lg" style={{filter:'blur(1px)'}}></div>
+          <div className="absolute right-0 top-0 h-full w-2 animate-gradient-wave bg-gradient-to-b from-cyan-400 via-green-400 to-blue-400 dark:from-yellow-700 dark:via-amber-500 dark:to-yellow-300 opacity-80 rounded-r-lg" style={{filter:'blur(1px)'}}></div>
+        </div>
+        <div className="relative z-10">
+          <Navbar options={navOptions} position="top" />
 
-        <main className="max-w-4xl mx-auto px-8 py-20 flex-1">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
-            {/* Left: About Content */}
-            <div className="md:w-1/2 w-full">
-              <h1 className="text-4xl font-bold mb-6">About Me</h1>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
-                My name is Hunter Lambert. I’m passionate about technology, science, and creating projects that merge the two. 
-                I’ve built everything from web apps and text-based games to tools for research and historical storytelling.
-              </p>
-              <p className="text-lg text-gray-600 dark:text-gray-300">
-                This site is part of my ongoing CS220 Capstone project, built with Next.js and Tailwind CSS.
-              </p>
-              <div className="mt-8">
-                <ThemeToggle />
+          <main className="max-w-4xl mx-auto px-8 py-20 flex-1">
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              {/* Left: About Content */}
+              <div className="md:w-1/2 w-full">
+                <h1 className="text-5xl font-extrabold mb-6 text-blue-700 dark:text-yellow-700" style={{textShadow:'0 2px 8px rgba(0,0,0,0.08)'}}>About Me</h1>
+                <p className="text-lg mb-4 text-blue-500 dark:text-yellow-300">
+                  My name is Hunter Lambert. I’m passionate about technology, science, and creating projects that merge the two. 
+                  I’ve built everything from web apps and text-based games to tools for research and historical storytelling.
+                </p>
+                <p className="text-lg text-blue-400 dark:text-yellow-200">
+                  This site is part of my ongoing CS220 Capstone project, built with Next.js and Tailwind CSS.
+                </p>
+                <div className="mt-8">
+                  <ThemeToggle />
+                </div>
+              </div>
+              {/* Right: ASCII Art */}
+              <div className="md:w-1/2 w-full flex justify-center items-start md:items-center md:pr-8">
+                <pre
+                  ref={asciiRef}
+                  className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-blue-600 dark:text-amber-300 opacity-0 md:opacity-100 overflow-x-auto md:overflow-x-visible md:max-w-none max-w-full animate-none"
+                  style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.12))' }}
+                >
+                  {asciiArt}
+                </pre>
               </div>
             </div>
-            {/* Right: ASCII Art */}
-            <div className="md:w-1/2 w-full flex justify-center items-start md:items-center md:pr-8">
-              <pre className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-gray-700 dark:text-gray-300 overflow-x-auto md:overflow-x-visible md:max-w-none max-w-full">
-                {asciiArt}
-              </pre>
-            </div>
-          </div>
-        </main>
-        <Footer navOptions={navOptions}>
-          <ContactForm />
-        </Footer>
+          </main>
+          <Footer navOptions={navOptions}>
+            <ContactForm />
+          </Footer>
+        </div>
       </div>
+      {/* Tailwind custom styles for animation */}
+      <style jsx global>{`
+        @keyframes waving-fade-in {
+          0% { opacity: 0; transform: rotate(-2deg) scale(0.98); }
+          10% { opacity: 0.2; transform: rotate(2deg) scale(1.01); }
+          20% { opacity: 0.4; transform: rotate(-3deg) scale(1.01); }
+          30% { opacity: 0.6; transform: rotate(3deg) scale(1.01); }
+          40% { opacity: 0.8; transform: rotate(-2deg) scale(1.01); }
+          50% { opacity: 1; transform: rotate(2deg) scale(1.01); }
+          60% { opacity: 1; transform: rotate(-1deg) scale(1.01); }
+          70% { opacity: 1; transform: rotate(1deg) scale(1.01); }
+          80% { opacity: 1; transform: rotate(-2deg) scale(1.01); }
+          90% { opacity: 1; transform: rotate(2deg) scale(1.01); }
+          100% { opacity: 1; transform: rotate(0deg) scale(1); }
+        }
+        .animate-waving-fade-in {
+          animation: waving-fade-in 2.5s cubic-bezier(.4,0,.2,1) 0.2s both;
+        }
+        @keyframes gradient-wave {
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        .animate-gradient-wave {
+          background-size: 200% 200%;
+          animation: gradient-wave 4s ease-in-out infinite;
+        }
+      `}</style>
     </>
   );
 }
