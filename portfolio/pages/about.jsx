@@ -107,7 +107,7 @@ export default function About() {
         <title>About | Hunter Lambert</title>
       </Head>
 
-      <div className="min-h-screen bg-white dark:bg-black border-x border-zinc-100 dark:border-zinc-800 text-gray-900 dark:text-gray-100 flex flex-col justify-between">
+  <div className="min-h-screen bg-white dark:bg-black border-l border-zinc-100 dark:border-zinc-800 text-gray-900 dark:text-gray-100 flex flex-col justify-between">
         <Navbar options={navOptions} position="top" />
 
         <main className="max-w-4xl mx-auto px-8 py-20 flex-1">
@@ -127,8 +127,8 @@ export default function About() {
               </div>
             </div>
             {/* Right: ASCII Art */}
-            <div className="md:w-1/2 w-full flex justify-center items-start md:items-center">
-              <pre className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-gray-700 dark:text-gray-300 overflow-auto">
+            <div className="md:w-1/2 w-full flex justify-center items-start md:items-center md:pr-8">
+              <pre className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-gray-700 dark:text-gray-300 overflow-x-auto md:overflow-x-visible md:max-w-none max-w-full">
                 {asciiArt}
               </pre>
             </div>
