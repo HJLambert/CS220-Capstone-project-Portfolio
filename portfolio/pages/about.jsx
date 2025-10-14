@@ -145,7 +145,7 @@ export default function About() {
               <div className="md:w-1/2 w-full flex justify-center items-start md:items-center md:pr-8">
                 <pre
                   ref={asciiRef}
-                  className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-blue-600 dark:text-amber-300 opacity-0 md:opacity-100 overflow-x-auto md:overflow-x-visible md:max-w-none max-w-full animate-none"
+                  className="whitespace-pre font-mono leading-none text-[0.33em] md:text-[0.33em] text-blue-600 dark:text-yellow-800 opacity-0 md:opacity-100 overflow-x-auto md:overflow-x-visible md:max-w-none max-w-full animate-none"
                   style={{ filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.12))' }}
                 >
                   {asciiArt}
@@ -176,13 +176,19 @@ export default function About() {
         .animate-waving-fade-in {
           animation: waving-fade-in 2.5s cubic-bezier(.4,0,.2,1) 0.2s both;
         }
-        @keyframes gradient-wave {
+        .animate-gradient-border {
+          background: linear-gradient(90deg, #22d3ee, #22c55e, #0ea5e9, #f59e42, #b45309, #fbbf24, #fde68a);
+          background-size: 400% 400%;
+          animation: gradient-border-move 8s ease-in-out infinite;
+        }
+        @media (prefers-color-scheme: dark) {
+          .animate-gradient-border {
+            background: linear-gradient(90deg, #b45309, #f59e42, #fde68a, #a16207, #78350f, #fbbf24, #fde68a);
+          }
+        }
+        @keyframes gradient-border-move {
           0%,100% { background-position: 0% 50%; }
           50% { background-position: 100% 50%; }
-        }
-        .animate-gradient-wave {
-          background-size: 200% 200%;
-          animation: gradient-wave 4s ease-in-out infinite;
         }
       `}</style>
     </>

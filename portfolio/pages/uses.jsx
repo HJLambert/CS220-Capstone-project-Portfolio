@@ -47,16 +47,16 @@ export default function Uses() {
       <Head>
         <title>Uses | Hunter Lambert</title>
       </Head>
-      <div className="min-h-screen bg-white dark:bg-black border-x border-zinc-100 dark:border-zinc-800 text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
+  <div className="min-h-screen bg-white dark:bg-black border-l-4 border-r-4 border-transparent animate-gradient-border text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
         <Navbar options={navOptions} position="top" />
         <main className="max-w-5xl mx-auto px-8 py-20 flex-1">
-          <h1 className="text-3xl font-bold mb-8">Here's A short list of tools I employ and enjoy:</h1>
+          <h1 className="text-4xl font-extrabold mb-8 text-blue-700 dark:text-yellow-700">Here's A short list of tools I employ and enjoy:</h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {/* Left: Categories and subheaders */}
             <div>
               {categories.map((cat) => (
                 <div key={cat.name} className="mb-8">
-                  <h2 className="text-xl font-semibold mb-4 text-blue-700 dark:text-blue-400">{cat.name}</h2>
+                  <h2 className="text-xl font-semibold mb-4 text-blue-700 dark:text-yellow-700">{cat.name}</h2>
                   {cat.items.map((item, idx) => (
                     <div key={idx} className="mb-6">
                       <div className="hidden md:block h-8"></div>
@@ -71,8 +71,8 @@ export default function Uses() {
                 <div key={cat.name} className="mb-8">
                   {cat.items.map((item, idx) => (
                     <div key={idx} className="mb-6">
-                      <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-200">{item.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{item.desc}</p>
+                      <h3 className="text-lg font-semibold text-blue-800 dark:text-yellow-200">{item.title}</h3>
+                      <p className="text-blue-500 dark:text-yellow-300">{item.desc}</p>
                     </div>
                   ))}
                 </div>

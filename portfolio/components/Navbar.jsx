@@ -6,13 +6,13 @@ export default function Navbar({ options, position = 'top' }) {
   const [open, setOpen] = useState(false);
   return (
     <nav
-      className={`navbar bg-white dark:bg-black border-x border-zinc-100 dark:border-zinc-800 w-full flex justify-center ${position === 'bottom' ? 'border-t' : 'border-b'}`}
+      className={`navbar bg-white dark:bg-black w-full flex justify-center relative z-20 ${position === 'bottom' ? 'border-t-4' : 'border-b-4'} border-transparent animate-gradient-border`}
     >
       {/* Desktop: horizontal menu */}
-      <ul className="hidden md:flex gap-8 py-4 text-gray-700 dark:text-gray-200">
+      <ul className="hidden md:flex gap-8 py-4 text-blue-700 dark:text-yellow-700">
         {options.map((opt, i) => (
           <li key={i}>
-            <Link href={opt.path} className="hover:underline hover:text-sky-500">
+            <Link href={opt.path} className="hover:underline hover:text-blue-500 dark:hover:text-yellow-400">
               {opt.label}
             </Link>
           </li>
@@ -21,18 +21,18 @@ export default function Navbar({ options, position = 'top' }) {
       {/* Mobile: dropdown menu */}
       <div className="md:hidden w-full flex flex-col items-center">
         <button
-          className="py-4 w-full text-center text-gray-700 dark:text-gray-200 focus:outline-none border-b border-zinc-200 dark:border-zinc-700"
+          className="py-4 w-full text-center text-blue-700 dark:text-yellow-700 focus:outline-none border-b-2 border-transparent animate-gradient-border"
           onClick={() => setOpen((v) => !v)}
         >
           Menu ▾
         </button>
         {open && (
-          <ul className="w-full bg-white dark:bg-black text-gray-700 dark:text-gray-200 shadow-md z-10">
+          <ul className="w-full bg-white dark:bg-black text-blue-700 dark:text-yellow-700 shadow-md z-10">
             {options.map((opt, i) => (
-              <li key={i} className="border-b border-zinc-100 dark:border-zinc-800 last:border-0">
+              <li key={i} className="border-b-2 border-transparent animate-gradient-border last:border-0">
                 <Link
                   href={opt.path}
-                  className="block px-6 py-3 hover:underline hover:text-sky-500"
+                  className="block px-6 py-3 hover:underline hover:text-blue-500 dark:hover:text-yellow-400"
                   onClick={() => setOpen(false)}
                 >
                   {opt.label}
