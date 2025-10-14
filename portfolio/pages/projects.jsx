@@ -1,4 +1,5 @@
 import Navbar from '../components/Navbar';
+import GradientLine from '../components/ui/GradientLine';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import Head from 'next/head';
@@ -25,8 +26,9 @@ export default function Projects() {
       <Head>
         <title>Projects | Hunter Lambert</title>
       </Head>
-  <div className="min-h-screen bg-white dark:bg-black border-l-4 border-r-4 border-transparent animate-gradient-border text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
-        <Navbar options={navOptions} position="top" />
+  <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
+  <Navbar options={navOptions} position="top" />
+  <GradientLine />
         <main className="max-w-5xl mx-auto px-8 py-20 flex-1">
           <h1 className="text-4xl font-extrabold mb-8 text-blue-700 dark:text-yellow-700">Projects</h1>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

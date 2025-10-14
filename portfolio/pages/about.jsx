@@ -1,5 +1,6 @@
 
 import Navbar from '../components/Navbar';
+import GradientLine from '../components/ui/GradientLine';
 import ThemeToggle from '../components/ThemeToggle';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
@@ -105,8 +106,9 @@ export default function About() {
       <Head>
         <title>About | Hunter Lambert</title>
       </Head>
-      <div className="min-h-screen bg-white dark:bg-black border-l-4 border-r-4 border-[linear-gradient(180deg,_#60a5fa_0%,_#34d399_50%,_#60a5fa_100%)] dark:border-[linear-gradient(180deg,_#a16207_0%,_#fde68a_50%,_#78350f_100%)] text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
-        <Navbar options={navOptions} position="top" />
+  <div className="min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 transition-colors flex flex-col justify-between">
+  <Navbar options={navOptions} position="top" />
+  <GradientLine />
         <main className="max-w-4xl mx-auto px-8 py-20 flex-1">
           <div className="flex flex-col md:flex-row gap-8 items-start">
             {/* Left: About Content */}
