@@ -29,7 +29,6 @@ export default function Home() {
             I’m a web developer student interested in creative, scientific, and historical applications of software. 
             Welcome to my personal portfolio.
           </p>
-          <ThemeToggle />
           {/* Blog Section */}
           <section className="mt-16 font-sans">
             <h2 className="text-3xl font-bold mb-6 text-blue-700 dark:text-yellow-700">Updates</h2>
